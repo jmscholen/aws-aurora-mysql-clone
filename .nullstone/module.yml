@@ -1,0 +1,13 @@
+org_name: jmscholen
+name: aws-aurora-mysql-clone
+friendly_name: AWS Aurora MySQL Clone Module
+description: Create an AWS Aurora MYSQL clone
+category: datastore
+subcategory: ""
+provider_types:
+    - aws
+platform: mysql
+subplatform: ""
+type: ""
+appCategories: []
+is_public: true

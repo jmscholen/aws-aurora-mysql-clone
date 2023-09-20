@@ -1,0 +1,12 @@
+# Mac
+.DS_Store
+
+# Webstorm
+.idea/
+
+# Terraform
+.terraform/
+*.tfstate*
+*.tfvars
+envs/
+*.tar.gz
