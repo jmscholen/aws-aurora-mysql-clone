@@ -12,7 +12,6 @@ resource "aws_rds_cluster" "this" {
   skip_final_snapshot       = true
   restore_to_point_in_time {
     source_cluster_identifier  = var.source_cluster_identifier
-    kms-key-id                 = var.kms_key_id
     restore_type               = "copy-on-write"
     use_latest_restorable_time = true
   }
