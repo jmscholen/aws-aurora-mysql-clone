@@ -15,6 +15,9 @@ resource "aws_rds_cluster" "this" {
     restore_type               = "copy-on-write"
     use_latest_restorable_time = true
   }
+    
+  storage_encrypted            = true
+  kms_key_id                   = aws_kms_key.this.id
 }
 
 resource "aws_rds_cluster_instance" "cluster_instances" {
