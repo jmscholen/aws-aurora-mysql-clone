@@ -30,6 +30,11 @@ data "aws_iam_policy_document" "encryption_key" {
       "kms:GenerateDataKey*",
       "kms:Describe*"
     ]
+
+    principals {
+      type        = "AWS"
+      identifiers = ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"]
+    }
   }
 
   statement {
@@ -39,8 +44,14 @@ data "aws_iam_policy_document" "encryption_key" {
     actions = [
       "kms:CreateGrant",
       "kms:ListGrants",
-      "kms:RevokeGrant",
+      "kms:RevokeGrant"
     ]
+
+    principals {
+      type        = "AWS"
+      identifiers = ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"]
+    }
+
     condition {
       test     = "Bool"
       values   = ["true"]

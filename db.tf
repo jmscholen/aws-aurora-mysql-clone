@@ -17,7 +17,7 @@ resource "aws_rds_cluster" "this" {
   }
     
   storage_encrypted            = true
-  kms_key_id                   = aws_kms_key.this.id
+  kms_key_id                   = aws_kms_key.this.arn
 }
 
 resource "aws_rds_cluster_instance" "cluster_instances" {
